@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Search Films</title>
+</head>
+<body>
+    <header class="site-header" role="banner">
+        <div class="site-header__container container">
+            <div class="site-header__brand">
+                <a href="/" class="brand">SearchFilms</a>
+            </div>
+
+            <form class="search" role="search" action="#" method="get" aria-label="Поиск фильма">
+                <label class="search__label" for="film-search" hidden>Поиск фильма</label>
+                <input
+                    class="search__input"
+                    id="film-search"
+                    name="q"
+                    type="search"
+                    placeholder="Введите название фильма..."
+                    aria-label="Введите название фильма для поиска"
+                >
+                <button class="search__button" type="submit">Поиск</button>
+            </form>
+        </div>
+    </header>
+
+    <main class="main" role="main">
+        <div class="main__container container">
+
+            <section class="movies" aria-label="Список фильмов">
+                <h2 class="movies__title visually-hidden">Результаты поиска</h2>
+
+                <ul class="movies__list">
+                    <li class="movies__item">
+                        <article class="film-card" aria-labelledby="film-1-title">
+                            <div class="film-card__poster">
+                                <img
+                                    class="film-card__image"
+                                    src="https://m.media-amazon.com/images/M/MV5BNWE5MGI3MDctMmU5Ni00YzI2LWEzMTQtZGIyZDA5MzQzNDBhXkEyXkFqcGc@._V1_SX300.jpg"
+                                    alt="Постер Guardians of the Galaxy Vol. 2"
+                                >
+                            </div>
+
+                            <div class="film-card__body">
+                                <h3 id="film-1-title" class="film-card__title">Guardians of the Galaxy Vol. 2</h3>
+
+                                <ul class="film-card__meta">
+                                    <li class="film-card__meta-item"><strong>Year:</strong> 2017</li>
+                                    <li class="film-card__meta-item"><strong>Released:</strong> 05 May 2017</li>
+                                    <li class="film-card__meta-item"><strong>Runtime:</strong> 136 min</li>
+                                    <li class="film-card__meta-item"><strong>Genre:</strong> Action, Adventure, Comedy</li>
+                                </ul>
+
+                                <p class="film-card__plot">
+                                    The Guardians struggle to keep together as a team while dealing with their personal family issues,
+                                    notably Star-Lord's encounter with his father, the ambitious celestial being Ego.
+                                </p>
+
+                                <div class="film-card__actions">
+                                    <button class="film-card__btn film-card__btn--primary" type="button">Подробнее</button>
+                                    <button class="film-card__btn" type="button">Добавить в избранное</button>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="movies__item">
+                        <article class="film-card" aria-labelledby="film-2-title">
+                            <div class="film-card__poster">
+                                <img
+                                    class="film-card__image"
+                                    src="https://m.media-amazon.com/images/M/MV5BNWE5MGI3MDctMmU5Ni00YzI2LWEzMTQtZGIyZDA5MzQzNDBhXkEyXkFqcGc@._V1_SX300.jpg"
+                                    alt="Постер Guardians of the Galaxy Vol. 2"
+                                >
+                            </div>
+
+                            <div class="film-card__body">
+                                <h3 id="film-2-title" class="film-card__title">Guardians of the Galaxy Vol. 2</h3>
+
+                                <ul class="film-card__meta">
+                                    <li class="film-card__meta-item"><strong>Year:</strong> 2017</li>
+                                    <li class="film-card__meta-item"><strong>Released:</strong> 05 May 2017</li>
+                                    <li class="film-card__meta-item"><strong>Runtime:</strong> 136 min</li>
+                                    <li class="film-card__meta-item"><strong>Genre:</strong> Action, Adventure, Comedy</li>
+                                </ul>
+
+                                <p class="film-card__plot">
+                                    The Guardians struggle to keep together as a team while dealing with their personal family issues,
+                                    notably Star-Lord's encounter with his father, the ambitious celestial being Ego.
+                                </p>
+
+                                <div class="film-card__actions">
+                                    <button class="film-card__btn film-card__btn--primary" type="button">Подробнее</button>
+                                    <button class="film-card__btn" type="button">Добавить в избранное</button>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
+
+                <nav class="pagination" role="navigation" aria-label="Пагинация по результатам">
+                    <ul class="pagination__list">
+                        <li class="pagination__item pagination__item--prev">
+                            <a class="pagination__link" href="#" aria-label="Предыдущая страница">←</a>
+                        </li>
+                        <li class="pagination__item"><a class="pagination__link" href="#">1</a></li>
+                        <li class="pagination__item"><a class="pagination__link pagination__link--active" href="#" aria-current="page">2</a></li>
+                        <li class="pagination__item"><a class="pagination__link" href="#">3</a></li>
+                        <li class="pagination__item pagination__item--next">
+                            <a class="pagination__link" href="#" aria-label="Следующая страница">→</a>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="site-footer__container container">
+            <p class="site-footer__copyright">© This project was created by Roman Bozhok 2025</p>
+
+            <nav class="site-footer__social" aria-label="Социальные ссылки">
+                <ul class="social-list">
+                    <li class="social-list__item"><a class="social-list__link" href="https://github.com/QueenCDN/" target="_blank" rel="noopener">GitHub</a></li>
+                    <li class="social-list__item"><a class="social-list__link" href="https://t.me/Fonerge_Queen" target="_blank" rel="noopener">Telegram</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

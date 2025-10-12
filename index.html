@@ -1,136 +1,66 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="image/png" sizes="96x96" rel="icon" href="favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/app.js" defer></script>
     <title>Search Films</title>
 </head>
-<body>
-    <header class="site-header" role="banner">
-        <div class="site-header__container container">
-            <div class="site-header__brand">
-                <a href="/" class="brand">SearchFilms</a>
-            </div>
-
-            <form class="search" role="search" action="#" method="get" aria-label="Поиск фильма">
-                <label class="search__label" for="film-search" hidden>Поиск фильма</label>
-                <input
-                    class="search__input"
-                    id="film-search"
-                    name="q"
-                    type="search"
-                    placeholder="Введите название фильма..."
-                    aria-label="Введите название фильма для поиска"
+<body class="bg-slate-900">
+<div class="min-h-screen flex flex-col bg-slate-900 text-white">
+    <div class="container mx-auto px-4 max-w-4xl flex flex-col flex-grow">
+        <header class="py-8 px-4">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-blue-500">
+                Search Films
+            </h1>
+            <div class="flex items-center gap-2 max-w-lg mx-auto">
+                <div class="relative flex-grow">
+                    <input
+                        type="text"
+                        placeholder="Search for a movie..."
+                        id="search-input"
+                        class="w-full bg-slate-800 border border-slate-700 text-white rounded-full py-3 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-shadow duration-300"
+                    />
+                </div>
+                <button
+                    id="search-btn"
+                    aria-label="Add movie"
+                    class="bg-sky-500 hover:bg-sky-600 text-white rounded-full p-3 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 focus:ring-offset-slate-900"
                 >
-                <button class="search__button" type="submit">Поиск</button>
-            </form>
-        </div>
-    </header>
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    >
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    />
+                    </svg>
+                </button>
+            </div>
+        </header>
 
-    <main class="main" role="main">
-        <div class="main__container container">
+        <main class="flex-grow pb-8">
+            <div class="space-y-8" id="movie-list"></div>
+        </main>
 
-            <section class="movies" aria-label="Список фильмов">
-                <h2 class="movies__title visually-hidden">Результаты поиска</h2>
-
-                <ul class="movies__list">
-                    <li class="movies__item">
-                        <article class="film-card" aria-labelledby="film-1-title">
-                            <div class="film-card__poster">
-                                <img
-                                    class="film-card__image"
-                                    src="https://m.media-amazon.com/images/M/MV5BNWE5MGI3MDctMmU5Ni00YzI2LWEzMTQtZGIyZDA5MzQzNDBhXkEyXkFqcGc@._V1_SX300.jpg"
-                                    alt="Постер Guardians of the Galaxy Vol. 2"
-                                >
-                            </div>
-
-                            <div class="film-card__body">
-                                <h3 id="film-1-title" class="film-card__title">Guardians of the Galaxy Vol. 2</h3>
-
-                                <ul class="film-card__meta">
-                                    <li class="film-card__meta-item"><strong>Year:</strong> 2017</li>
-                                    <li class="film-card__meta-item"><strong>Released:</strong> 05 May 2017</li>
-                                    <li class="film-card__meta-item"><strong>Runtime:</strong> 136 min</li>
-                                    <li class="film-card__meta-item"><strong>Genre:</strong> Action, Adventure, Comedy</li>
-                                </ul>
-
-                                <p class="film-card__plot">
-                                    The Guardians struggle to keep together as a team while dealing with their personal family issues,
-                                    notably Star-Lord's encounter with his father, the ambitious celestial being Ego.
-                                </p>
-
-                                <div class="film-card__actions">
-                                    <button class="film-card__btn film-card__btn--primary" type="button">Подробнее</button>
-                                    <button class="film-card__btn" type="button">Добавить в избранное</button>
-                                </div>
-                            </div>
-                        </article>
-                    </li>
-
-                    <li class="movies__item">
-                        <article class="film-card" aria-labelledby="film-2-title">
-                            <div class="film-card__poster">
-                                <img
-                                    class="film-card__image"
-                                    src="https://m.media-amazon.com/images/M/MV5BNWE5MGI3MDctMmU5Ni00YzI2LWEzMTQtZGIyZDA5MzQzNDBhXkEyXkFqcGc@._V1_SX300.jpg"
-                                    alt="Постер Guardians of the Galaxy Vol. 2"
-                                >
-                            </div>
-
-                            <div class="film-card__body">
-                                <h3 id="film-2-title" class="film-card__title">Guardians of the Galaxy Vol. 2</h3>
-
-                                <ul class="film-card__meta">
-                                    <li class="film-card__meta-item"><strong>Year:</strong> 2017</li>
-                                    <li class="film-card__meta-item"><strong>Released:</strong> 05 May 2017</li>
-                                    <li class="film-card__meta-item"><strong>Runtime:</strong> 136 min</li>
-                                    <li class="film-card__meta-item"><strong>Genre:</strong> Action, Adventure, Comedy</li>
-                                </ul>
-
-                                <p class="film-card__plot">
-                                    The Guardians struggle to keep together as a team while dealing with their personal family issues,
-                                    notably Star-Lord's encounter with his father, the ambitious celestial being Ego.
-                                </p>
-
-                                <div class="film-card__actions">
-                                    <button class="film-card__btn film-card__btn--primary" type="button">Подробнее</button>
-                                    <button class="film-card__btn" type="button">Добавить в избранное</button>
-                                </div>
-                            </div>
-                        </article>
-                    </li>
-                </ul>
-
-                <nav class="pagination" role="navigation" aria-label="Пагинация по результатам">
-                    <ul class="pagination__list">
-                        <li class="pagination__item pagination__item--prev">
-                            <a class="pagination__link" href="#" aria-label="Предыдущая страница">←</a>
-                        </li>
-                        <li class="pagination__item"><a class="pagination__link" href="#">1</a></li>
-                        <li class="pagination__item"><a class="pagination__link pagination__link--active" href="#" aria-current="page">2</a></li>
-                        <li class="pagination__item"><a class="pagination__link" href="#">3</a></li>
-                        <li class="pagination__item pagination__item--next">
-                            <a class="pagination__link" href="#" aria-label="Следующая страница">→</a>
-                        </li>
-                    </ul>
-                </nav>
-            </section>
-
-        </div>
-    </main>
-
-    <footer class="site-footer" role="contentinfo">
-        <div class="site-footer__container container">
-            <p class="site-footer__copyright">© This project was created by Roman Bozhok 2025</p>
-
-            <nav class="site-footer__social" aria-label="Социальные ссылки">
-                <ul class="social-list">
-                    <li class="social-list__item"><a class="social-list__link" href="https://github.com/QueenCDN/" target="_blank" rel="noopener">GitHub</a></li>
-                    <li class="social-list__item"><a class="social-list__link" href="https://t.me/Fonerge_Queen" target="_blank" rel="noopener">Telegram</a></li>
-                </ul>
-            </nav>
-        </div>
-    </footer>
+        <footer class="text-center py-6">
+            <p class="text-slate-500 text-sm" id="date-year">
+            <script>
+                const dateYear = document.getElementById('date-year')
+                dateYear.textContent = '© ' + new Date().getFullYear() +' website was created by Roman Bozhok';
+            </script>
+            </p>
+            <p><a href="https://t.me/Fonerge_Queen" target="_blank">Telegram</a> <a href="https://github.com/QueenCDN" target="_blank">Github</a></p>
+        </footer>
+    </div>
+</div>   
 </body>
 </html>
